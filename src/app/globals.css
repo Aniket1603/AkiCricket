@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-blue: #38bdf8; /* sky-400 */
+  --color-ipl-gold: #eab308; /* yellow-500 */
+  --color-cyber-purple: #a78bfa; /* violet-400 */
+  --color-cricket-green: #10b981; /* emerald-500 */
+  --color-cyber-dark: #f8fafc; /* slate-50 */
+  --color-cyber-darker: #f1f5f9; /* slate-100 */
+  --color-cyber-card: rgba(255, 255, 255, 0.45);
+
+  --animate-neon-pulse: glass-pulse 2s infinite alternate;
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-hologram-flicker: hologram-flicker 3s ease-in-out infinite alternate;
+  --animate-grid-drift: grid-drift 20s linear infinite;
+  --animate-float: float-animation 6s ease-in-out infinite;
+
+  @keyframes glass-pulse {
+    0% {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), 0 0 10px rgba(56, 189, 248, 0.1);
+    }
+
+    100% {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), 0 0 20px rgba(56, 189, 248, 0.25);
+    }
+  }
+
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes hologram-flicker {
+    0% {
+      opacity: 0.96;
+      filter: brightness(1) contrast(1);
+    }
+
+    5% {
+      opacity: 0.9;
+      filter: brightness(0.95) contrast(1.05);
+    }
+
+    10% {
+      opacity: 0.98;
+      filter: brightness(1) contrast(1);
+    }
+
+    50% {
+      opacity: 0.93;
+      filter: brightness(1.05) contrast(0.98);
+    }
+
+    52% {
+      opacity: 0.85;
+      filter: brightness(1.1) contrast(1.05);
+    }
+
+    54% {
+      opacity: 0.97;
+      filter: brightness(1.02) contrast(1);
+    }
+
+    90% {
+      opacity: 0.94;
+      filter: brightness(0.98) contrast(1);
+    }
+
+    100% {
+      opacity: 0.99;
+      filter: brightness(1.03) contrast(1.02);
+    }
+  }
+
+  @keyframes grid-drift {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes float-animation {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-10px) rotate(0.5deg);
+    }
+  }
+}
+
+:root {
+  --background: #f0f9ff; /* Sky 50 */
+  --foreground: #0f172a; /* Slate 900 */
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom premium light glass scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.45); /* sky-400 with opacity */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.7);
+}
+
+/* Light Cyber Grid Overlay */
+.cyber-grid {
+  background-image: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Soft stadium light sweep */
+.stadium-glow {
+  background: radial-gradient(circle 50vw at 50% -10vh, rgba(56, 189, 248, 0.18) 0%, transparent 80%);
+}
+
+.glow-blue {
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.glow-gold {
+  text-shadow: 0 0 8px rgba(234, 179, 8, 0.4);
+}
+
+.glow-purple {
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
+}
+
+/* Standard frosted glass panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+/* Purple accent frosted glass panel */
+.glass-panel-purple {
+  background: rgba(253, 244, 255, 0.45); /* fuchsia-50 glass */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(147, 51, 234, 0.04);
+}
+
+/* Soft sky glow panel */
+.glass-panel-sky {
+  background: rgba(240, 249, 255, 0.45); /* sky-50 glass */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.04);
+}
